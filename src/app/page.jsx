@@ -1,29 +1,10 @@
-"use client"
+import Home from "@/components/Home";
+import { Suspense } from "react";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import { useSearchParams } from "next/navigation";
-
-export default function Home() {
-  const searchParams = useSearchParams();
-
-  const queryHn = searchParams.get('hn')
-
-  if (!queryHn) {
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <Header />
-        <p className="text-white text-2xl">ไม่พบหมายเลข</p>
-        <Footer />
-      </div>
-    );
-  }
-
+export default function page() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <Header />
-      <p className="text-white text-center">HN : {queryHn}</p>
-      <Footer />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home />
+    </Suspense>
   );
 }
