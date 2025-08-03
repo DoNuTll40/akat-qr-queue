@@ -6,23 +6,18 @@ export const metadata = {
   keywords: "QR code, kiosk, application, Next.js",
   authors: [{ name: "Akathosp" }],
   creator: "Akathosp",
-  openGraph: {
-    title: "QR Kiosk",
-    description: "A simple QR code kiosk application",
-    url: "https://akathos.moph.go.th/qr/queue",
-    siteName: "QR Kiosk",
-    images: [
+  icons: {
+    icon: [
       {
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Seal_of_the_Ministry_of_Public_Health_of_Thailand.svg/1200px-Seal_of_the_Ministry_of_Public_Health_of_Thailand.svg.png",
-        width: 1200,
-        height: 630,
-        alt: "QR Kiosk Open Graph Image",
-      },
-    ],
-    locale: "en-US",
-    type: "website",
+        url: '/qr/queue/images/moph-md-logo.png',
+        href: '/qr/queue/images/moph-md-logo.png'
+      }
+    ]
   },
 };
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 // app/layout.js (for App Router) or pages/_app.js (for Pages Router)
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -31,9 +26,13 @@ config.autoAddCss = false; // Prevent Font Awesome from adding its own CSS
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
+    <html lang="en" className="h-full">
+      <body className="h-full m-0 p-0">
+        <div className="flex flex-col h-full">
+          <Header />
+          <main className="flex-1 overflow-y-auto max-w-[80rem] mx-auto p-2 w-full">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

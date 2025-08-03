@@ -1,11 +1,11 @@
 {
   "name": "next-qr-kiosk",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 5106",
     "lint": "next lint"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
     "@fortawesome/react-fontawesome": "^0.2.3",
+    "moment": "^2.30.1",
     "mysql2": "^3.14.3",
     "next": "15.4.5",
     "react": "19.1.0",
