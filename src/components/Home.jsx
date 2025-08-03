@@ -13,7 +13,7 @@ export default function ClientPage() {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <Header />
-        <p className="text-white text-2xl">ไม่พบหมายเลข</p>
+        <p className="text-2xl">ไม่พบหมายเลข</p>
         <Footer />
       </div>
     );
@@ -22,7 +22,7 @@ export default function ClientPage() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <Header />
-      <p className="text-white text-center">HN : {queryHn}</p>
+      <p className="text-center">HN : {queryHn}</p>
       <Footer />
     </div>
   );
