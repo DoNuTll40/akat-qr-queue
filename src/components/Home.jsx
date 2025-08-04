@@ -29,7 +29,8 @@ export default function ClientPage() {
       setLoading(true);
       setPatient(null); // รีเซ็ตข้อมูลผู้ป่วยก่อนโหลดใหม่
       const rows = await getPatient(vn);
-      setPatient(rows[0] || null);
+      console.log(rows)
+      setPatient(rows.data[0] || null);
       setCountdown(120); // รีเซ็ตนับถอยหลังหลังโหลดใหม่
     } catch (error) {
       console.error("Error fetching patient data:", error);
@@ -56,23 +57,15 @@ export default function ClientPage() {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center">
-        <p className="text-2xl">กำลังโหลดข้อมูล...</p>
+        <p className="text-xl">กำลังโหลดข้อมูล...</p>
       </div>
     );
   }
 
-  if (!queryVn) {
+  if (!patient || !patient.fullname) {
     return (
       <div className="flex flex-col items-center justify-center">
         <p className="text-2xl">ไม่พบหมายเลข</p>
-      </div>
-    );
-  }
-
-  if (!patient) {
-    return (
-      <div className="flex flex-col items-center justify-center">
-        <p className="text-2xl">กำลังโหลดข้อมูล...</p>
       </div>
     );
   }
