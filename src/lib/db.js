@@ -5,10 +5,12 @@ import mysql from "mysql2/promise";
 
 export async function getPatient(vn) {
   const connection = await mysql.createConnection({
-    host: "10.10.10.5",
-    user: "sa",
-    password: "sa",
-    database: "hos",
+    host: process.env.NEXT_PUBLIC_DB_HOST,
+    user: process.env.NEXT_PUBLIC_DB_USER,
+    password: process.env.NEXT_PUBLIC_DB_PASSWORD,
+    database: process.env.NEXT_PUBLIC_DB_NAME,
+    port: process.env.NEXT_PUBLIC_DB_PORT,
+    connectionLimit: process.env.NEXT_PUBLIC_DB_CONNECTION_LIMIT, // Optional: Set connection limit
   });
 
   const [rows] = await connection.execute(
