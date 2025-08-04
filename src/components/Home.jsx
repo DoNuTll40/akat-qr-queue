@@ -4,6 +4,7 @@ import { getPatient } from "@/lib/db";
 import { faUserInjured } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
+import "moment/locale/th";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Timeline, Spin } from "antd"; // <-- import antd components
