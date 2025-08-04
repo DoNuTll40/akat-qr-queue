@@ -86,16 +86,12 @@ export default function ClientPage() {
             {moment().locale("th").add(543, "year").format("วันที่ DD MMM YYYY")}
           </p>
         </div>
-        <div className="flex items-center gap-1">
-          <p className="border px-1 py-1 rounded-sm text-xs font-bold bg-black dark:bg-white text-white dark:text-[#1E2939] flex items-center justify-center">VN</p>
-          <p className="font-bold">{queryVn}</p>
-        </div>
       </div>
 
       <div>
         <p className="mt-2 -mb-2 px-2 py-1 bg-[#0e8c66] text-white font-semibold w-fit rounded-md shadow-sm">รายละเอียด</p>
         <div className="border-b border-gray-200 p-4 w-full">
-          <p className="text-lg text-center font-bold">คิวที่ <span className="underline text-xl">{patient?.depq}</span></p>
+          <p className="text-xl text-center font-bold">คิวที่ <span className="underline text-2xl">{patient?.depq}</span></p>
           <p className="text-lg">แผนกรับบริการ: <span className="underline">{patient?.department}</span></p>
           <p className="text-lg">สถานะ: <span className="underline">{patient?.NAME}</span></p>
           <p className="text-sm text-right text-gray-500 mt-2">
