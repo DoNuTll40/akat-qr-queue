@@ -1,0 +1,13 @@
+SELECT 
+  opds.hn,
+  CONCAT(pt.pname, pt.fname, ' ', pt.lname) AS fullname,
+  kskd.department,
+  opds.bps,
+  opds.bpd,
+  CONCAT(opds.vstdate, ' ', opds.vsttime) AS fulldatetime
+FROM opdscreen AS opds
+LEFT OUTER JOIN patient AS pt ON opds.hn = pt.hn
+LEFT OUTER JOIN kskdepartment AS kskd ON opds.screen_dep = kskd.depcode
+LEFT OUTER JOIN opdscreen_bp AS opdsb ON opds.vn = opdsb.vn
+WHERE opds.vstdate = CURDATE() AND opds.hn = "000053992"
+ORDER BY opds.vsttime DESC;

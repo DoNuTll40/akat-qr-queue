@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       <body className="h-full m-0 p-0">
         <div className="flex flex-col h-full">
           <Header />
-          <main className="flex-1 overflow-y-auto max-w-[80rem] mx-auto p-2 w-full">{children}</main>
+          <main className="flex-1 overflow-y-auto max-w-[80rem] mx-auto p-4 w-full">{children}</main>
           <Footer />
         </div>
       </body>
